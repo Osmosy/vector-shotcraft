@@ -2,7 +2,11 @@
 venv/
 __pycache__/
 *.pyc
-out/
-grid.json
+/out/
 node_modules/
 .DS_Store
+
+# артефакты демо держим в репозитории как доказательства прогона
+!demo/out/
+!demo/out/demo.mp4
+!demo/out/grid.json

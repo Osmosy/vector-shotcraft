@@ -1,0 +1,16 @@
+{
+  "name": "vector-shotcraft-demo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Демо-ролик Vector Shotcraft: монтаж по сетке битов, приёмы из карточек",
+  "scripts": {
+    "studio": "npx remotion studio",
+    "render": "npx remotion render ShotcraftDemo out/demo.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.484",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.484"
+  }
+}

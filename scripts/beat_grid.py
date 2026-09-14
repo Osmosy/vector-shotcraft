@@ -18,7 +18,7 @@ Apache-2.0, переписан и ужесточён — см. references/beat-s
   4. Два прохода отсева + МНК-фит по инлайнерам. Второй проход обязателен:
      одиночный выброс (трекер дописывает бит на затухании в конце трека)
      сдвигает прямую и портит остаток по всей длине.
-  5. Проверка半倍/双倍 (half/double: 70 против 140) — по силе ударов под
+  5. Проверка половинной/двойной сетки (half/double: 70 против 140) — по силе ударов под
      гребёнкой, а не по одному скаляру tempo.
   6. Перевод в кадры — ТОЛЬКО здесь и один раз: раннее округление копит
      ошибку до целого кадра.
@@ -46,6 +46,7 @@ class Grid:
     grid_phase_s: float
     residual_ms: float
     median_residual_ms: float
+    grid_error_ms: float
     outliers: int
     beats: list[float]
     raw_beats: list[float]
@@ -58,6 +59,77 @@ class Grid:
     fps: int
     frames: list[int] = field(default_factory=list)
     duration_s: float = 0.0
+
+
+def _energy_onsets(y, sr: int, min_gap_s: float = 0.10) -> "np.ndarray":
+    """Моменты ударов по локальным максимумам энергии.
+
+    Нужны как эталон для метрики точности сетки (grid_error_ms): в отличие от
+    onset_strength, где пик смещён пропорционально hop_length, здесь берём
+    максимум энергии в окне ~8 мс — это несмещённая оценка момента удара.
+    """
+    import numpy as np
+    from scipy.ndimage import maximum_filter1d
+
+    e = np.asarray(y, dtype="float64") ** 2
+    win = max(3, int(0.008 * sr) | 1)
+    m = maximum_filter1d(e, size=win, mode="constant")
+    thr = float(np.quantile(m, 0.995))
+    if thr <= 0:
+        return np.array([])
+    # локальный максимум и выше порога
+    peak = (m == e) & (m >= thr)
+    idx = np.flatnonzero(peak)
+    if idx.size == 0:
+        return np.array([])
+    # прореживание: не чаще, чем min_gap_s
+    gap = int(min_gap_s * sr)
+    keep = [int(idx[0])]
+    for i in idx[1:]:
+        if int(i) - keep[-1] >= gap:
+            keep.append(int(i))
+    return np.asarray(keep, dtype=float) / sr
+
+
+def _phase_by_energy(y, sr: int, period: float, phase_hint: float) -> float:
+    """Несмещённая фаза: скан по максимуму энергии сигнала.
+
+    Почему не берём готовую фазу: у beat_track систематический лаг ~16 мс, у пика
+    onset_strength — смещение, пропорциональное hop_length. Оба варианта дают
+    монтаж «почти в такт». Здесь: огибающая энергии → локальный максимум в окне
+    ~8 мс (убирает размазывание пика по окнам) → перебор фазы с шагом 1 мс →
+    выбор максимума суммы энергии в узлах сетки. Шаг 1 мс = 1/30 кадра при 30 fps,
+    то есть ошибка метода заведомо ниже одного кадра.
+
+    Значение возвращается приведённым в [0, period): сетка симметрична, и фаза
+    вида -0.215 с опасна для монтажа (кадр получается отрицательным).
+    """
+    import numpy as np
+    from scipy.ndimage import maximum_filter1d
+
+    e = np.asarray(y, dtype="float64") ** 2
+    win = max(3, int(0.008 * sr) | 1)
+    m = maximum_filter1d(e, size=win, mode="constant")
+    n_nodes = int((e.size / sr) / period)
+    if n_nodes < 4:
+        return float(phase_hint % period)
+
+    # шаг 1 мс по ВСЕМУ периоду: сетка {p + kT} при p и p+T/2 — РАЗНЫЕ сетки
+    # (вторая попадает в середину между ударами), поэтому половиной периода
+    # ограничиваться нельзя — так теряется фаза из второй половины.
+    step = 0.001
+    n_cand = max(2, int(period / step))
+    ks = np.arange(1, n_nodes)
+    best, best_p = -1.0, float(phase_hint % period)
+    for p in np.arange(n_cand) * step:
+        idx = np.round((p + ks * period) * sr).astype(np.int64)
+        idx = idx[(idx >= 0) & (idx < m.size)]
+        if idx.size < 4:
+            continue
+        s = float(m[idx].sum())
+        if s > best:
+            best, best_p = s, float(p)
+    return best_p % period
 
 
 def analyze(path: str, fps: int, tightness: float = 400.0) -> Grid:
@@ -110,12 +182,45 @@ def analyze(path: str, fps: int, tightness: float = 400.0) -> Grid:
     period, phase, keep = pass_fit(period, phase, 0.06)
     n_outliers = int((~keep).sum())
 
-    i_final = np.round((beats - phase) / period)
-    res_final = beats - (phase + i_final * period)
-    residual_ms = float(np.abs(res_final[keep]).max() * 1000.0) if keep.any() else 0.0
+    # --- 4c. Несмещённая фаза по энергии + две честные метрики ---
+    # Ни beat_track, ни пик onset_strength не дают истинную фазу удара:
+    # измерено на кликах с известной истиной (t = k·T) —
+    #   * вывод beat_track опаздывает на ~16 мс, и это НЕ квантование (лаг не
+    #     исчезает при уменьшении hop_length);
+    #   * пик onset_strength смещён на величину, пропорциональную hop
+    #     (12.8 мс при hop=256, 5.2 мс при 64) — артефакт оконного спектрального
+    #     потока, то есть свойство метода, а не трека.
+    # Итог без правки: монтаж уезжает на ~20 мс и звучит «почти в такт».
+    # Поэтому фазу берём несмещённо — сканом по максимуму энергии сигнала.
+    # Дальше две РАЗНЫЕ метрики, их нельзя путать, поэтому прямую фита
+    # сохраняем ДО подмены фазы:
+    #  * residual_ms — разброс битов ТРЕКЕРА вокруг своей прямой (ровность темпа
+    #    на длине трека; именно её требует апстрим на двухминутном файле). Она
+    #    никогда не покажет попадание в удар: у beat_track систематический лаг;
+    #  * grid_error_ms — реальная точность сетки: расстояние от энергетических
+    #    ударов до ближайшего узла. Именно она отвечает на вопрос «встанет ли
+    #    склейка в такт», и её проверяет тест.
+    period_fit, phase_fit = period, phase
+    i_fit = np.round((beats - phase_fit) / period_fit)
+    res_fit = beats - (phase_fit + i_fit * period_fit)
+    keep_fit = np.abs(res_fit) <= 0.06 * period_fit
+    residual_ms = float(np.abs(res_fit[keep_fit]).max() * 1000.0) if keep_fit.any() else 0.0
     median_residual_ms = (
-        float(np.median(np.abs(res_final[keep])) * 1000.0) if keep.any() else 0.0
+        float(np.median(np.abs(res_fit[keep_fit])) * 1000.0) if keep_fit.any() else 0.0
     )
+
+    # фазу берём несмещённо — сканом по максимуму энергии сигнала
+    phase = _phase_by_energy(y, sr, period, phase)
+    i_final = np.round((beats - phase) / period)
+    keep = np.abs(beats - (phase + i_final * period)) <= 0.06 * period
+    _onsets = _energy_onsets(y, sr)
+    _nodes = phase + np.arange(int((duration - phase) / period) + 1) * period
+    if _onsets.size and _nodes.size:
+        grid_error_ms = float(
+            np.median(np.abs(_onsets[:, None] - _nodes[None, :]).min(axis=1)) * 1000.0
+        )
+    else:
+        grid_error_ms = 0.0
     bpm = 60.0 / period
 
     # --- сетка как точная арифметическая прогрессия ---
@@ -180,6 +285,7 @@ def analyze(path: str, fps: int, tightness: float = 400.0) -> Grid:
         grid_phase_s=round(grid_phase, 6),
         residual_ms=round(residual_ms, 1),
         median_residual_ms=round(median_residual_ms, 1),
+        grid_error_ms=round(grid_error_ms, 1),
         outliers=n_outliers,
         beats=[round(float(b), 6) for b in grid],
         raw_beats=[round(float(b), 6) for b in beats],
@@ -231,7 +337,19 @@ def verdict(g: Grid) -> list[str]:
             "полу/двойной темп, проверить по слуху и по кадрам"
         )
     else:
-        out.append("OK  半/双倍 не нужен: базовая сетка точнее половинной и двойной")
+        out.append("OK  половинная/двойная сетка не нужна: базовая точнее (сила ударов под ней выше)")
+    out.append(
+        f"INFO остаток ±{g.residual_ms} мс — это разброс битов ТРЕКЕРА (ровность "
+        "темпа на длине трека), а не точность монтажа: у beat_track есть "
+        "систематический лаг"
+    )
+    out.append(
+        f"OK   точность сетки: медиана отклонения реальных ударов от узлов "
+        f"{g.grid_error_ms} мс (<= {0.5 / g.fps * 1000:.1f} мс = полкадра @ {g.fps} fps) "
+        "— этим числом и меряется «встанет ли склейка в такт»"
+        if g.grid_error_ms <= 0.5 / g.fps * 1000.0
+        else f"WARN точность сетки {g.grid_error_ms} мс хуже полкадра @ {g.fps} fps"
+    )
     out.append(
         f"INFO сильных ударов (кик/снейр, верхняя десятина) в сетке "
         f"(±{0.5 / g.fps * 1000:.0f} мс = полкадра @ {g.fps} fps): "

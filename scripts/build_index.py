@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Собрать русский справочник по карточкам шотов из вендоренных файлов.
 
-Читает references/cards/<категория>/*.md, вытаскивает из YAML-шапки апстрима
-одну строку (一句话) и поля 适用/时长/能量, собирает:
+Читает references/cards/<категория>/*.md и вытаскивает из YAML-шапки апстрима
+суть-в-одну-строку и поля «когда применять / длительность / энергия». Ключи
+шапки китайские — переименовывать их нельзя, по ним парсится первоисточник;
+исходный текст этих полей кладётся в JSON под суффиксом _zh. Результат:
   * references/cards-index.md  — таблица: имя, категория, что делает, когда
     применять, длительность, энергия (русские подписи колонок)
   * references/cards-index.json — то же машиночитаемо, для CI-сверки
@@ -40,14 +42,10 @@ CATEGORY_RU = {
     "ui-entrance": "появление элементов интерфейса",
 }
 
-# Русские подписи для типовых полей шапки
-FIELD_MAP = {
-    "一句话": "суть",
-    "适用": "когда применять",
-    "时长": "длительность",
-    "能量": "энергия",
-    "标签": "метки",
-}
+# Ключи frontmatter апстрима — китайские, и переименовывать их нельзя: именно
+# по этим строкам парсится шапка вендоренных карточек (см. _zh-поля в JSON).
+# Смысл ключей по порядку: суть-в-одну-строку, когда применять, длительность,
+# энергия, метки.
 
 
 def parse_frontmatter(text: str) -> dict[str, str]:
@@ -80,11 +78,15 @@ def main() -> int:
                 "name": name,
                 "category": category,
                 "category_ru": CATEGORY_RU.get(category, category),
-                "essence": fm.get("一句话", ""),
-                "when": fm.get("适用", ""),
-                "duration": fm.get("时长", ""),
-                "energy": fm.get("能量", ""),
-                "tags": fm.get("标签", ""),
+                # Ключи frontmatter — как в апстриме (китайские): их парсим,
+                # переименовывать нельзя. В JSON кладём их под суффиксом _zh:
+                # это исходный текст, и он намеренно НЕ переводится (числа и
+                # параметры машинному переводу не доверяем). Русский слой — _ru.
+                "essence_zh": fm.get("一句话", ""),
+                "when_zh": fm.get("适用", ""),
+                "duration_zh": fm.get("时长", ""),
+                "energy_zh": fm.get("能量", ""),
+                "tags_zh": fm.get("标签", ""),
                 "path": str(path.relative_to(ROOT)),
             }
         )
@@ -123,10 +125,10 @@ def main() -> int:
                 continue
             cells = [
                 f"`{r['name']}`",
-                r["essence"] or "—",
-                r["when"] or "—",
-                r["duration"] or "—",
-                r["energy"] or "—",
+                r.get("essence_ru") or r.get("essence_zh") or "—",
+                r.get("when_ru") or r.get("when_zh") or "—",
+                r.get("duration_ru") or r.get("duration_zh") or "—",
+                r.get("energy_ru") or r.get("energy_zh") or "—",
             ]
             lines.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
         lines.append("")

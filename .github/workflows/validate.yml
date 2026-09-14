@@ -27,10 +27,15 @@ jobs:
             || (echo "индекс устарел: пересоберите build_index.py + apply_translations.py"; exit 1)
 
       - name: Установка зависимостей для бит-сетки
-        run: pip install "librosa>=0.10,<1" "soundfile>=0.12,<1" "numpy>=1.26,<3"
+        run: pip install "librosa>=0.10,<1" "soundfile>=0.12,<1" "numpy>=1.26,<3" "scipy>=1.11,<2"
 
       - name: Тест бит-сетки на синтетике с известным темпом
         run: python3 tests/test_beat_grid.py
+
+      - name: Демо-ролик собран по сетке (склейки на узлах)
+        run: |
+          cd demo
+          python3 check_cuts.py out/demo.mp4
 
       - name: Проверка диаграммы (спецификация валидна, HTML воспроизводим)
         run: |

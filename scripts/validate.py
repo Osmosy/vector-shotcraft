@@ -89,6 +89,20 @@ def check_index(n_cards: int) -> int:
                 err(f"индекс: у {c.get('name')} нет поля {k}")
         if not (ROOT / c["path"]).exists():
             err(f"индекс: нет файла {c['path']}")
+
+    # Иероглифы допустимы ТОЛЬКО в полях _zh с исходным текстом апстрима.
+    # Если CJK просочился в русский слой (_ru) или в имя/путь — это дефект:
+    # читатель видит иероглиф вместо термина, а источник непонятен.
+    cjk = re.compile(r"[\u3000-\u9fff\uff00-\uffef\u3040-\u30ff]")
+    for c in cards:
+        for k, v in c.items():
+            if not isinstance(v, str):
+                continue
+            if cjk.search(v) and not k.endswith("_zh"):
+                err(
+                    f"индекс: у {c.get('name')} в поле {k} иероглифы — "
+                    "оригинал апстрима должен лежать в *_zh, а не в русском слое"
+                )
     return len(cards)
 
 
@@ -216,6 +230,106 @@ def check_notice() -> None:
         err("нет THIRD_PARTY_LICENSES/ с текстом лицензии апстрима")
 
 
+def check_demo() -> None:
+    """9: демо-сборка воспроизводима и её артефакты на месте.
+
+    Проверяем не «файлы существуют», а воспроизводимость: скрипты, которые
+    заявлены в demo/README.md как шаги запуска, обязаны быть в репозитории, а
+    сетка — содержать кадры, с которыми сверяется монтаж. Без этого демо
+    превращается в картинку, которую нельзя повторить.
+    """
+    demo = ROOT / "demo"
+    for rel in (
+        "make_bgm.py",
+        "check_cuts.py",
+        "comp/Demo.tsx",
+        "comp/Root.tsx",
+        "README.md",
+        "out/demo.mp4",
+        "out/grid.json",
+    ):
+        if not (demo / rel).exists():
+            err(f"demo: нет {rel} — сборка не воспроизводится")
+    grid = demo / "out" / "grid.json"
+    if grid.exists():
+        g = json.loads(grid.read_text(encoding="utf-8"))
+        for key in ("frames", "fps", "period_s", "grid_phase_s", "grid_error_ms"):
+            if key not in g:
+                err(f"demo/out/grid.json: нет поля {key}")
+        if g.get("fps") and g.get("frames"):
+            step = g["period_s"] * g["fps"]
+            bad = [f for f in g["frames"] if f < 0]
+            if bad:
+                err(f"demo/out/grid.json: отрицательные кадры {bad[:3]}")
+            if round(step, 3) != 15.0:
+                err(
+                    f"demo/out/grid.json: шаг сетки {step:.3f} кадра — демо "
+                    "рассчитано на 15 (120 BPM @ 30 fps), расписание разъедется"
+                )
+        # точность сетки — то, чем меряется «встанет ли склейка в такт»
+        if g.get("grid_error_ms", 99.0) > 5.0:
+            err(
+                f"demo/out/grid.json: точность сетки {g['grid_error_ms']} мс > 5 мс — "
+                "монтаж сядет «почти в такт»"
+            )
+    readme = demo / "README.md"
+    if readme.exists():
+        text = readme.read_text(encoding="utf-8")
+        for needle in ("beat_grid.py", "check_cuts.py", "make_bgm.py"):
+            if needle not in text:
+                err(f"demo/README.md не описывает шаг с {needle}")
+
+
+def check_no_cjk_in_our_text() -> None:
+    """10: в нашем тексте нет иероглифов — кроме строковых литералов с ключами.
+
+    Вендоренные карточки (references/cards/) — исключение: это апстримный
+    первоисточник, его нельзя править, sha1 сверяется отдельно. Карточки, где
+    оригинал законно лежит в *_zh-полях, тоже пропускаем.
+
+    В коде ключи апстрима обязаны остаться как есть — по ним парсится шапка
+    вендоренных карточек, и переименование сломает сборку индекса. Поэтому
+    иероглиф в строковом литерале — это код, а не дефект. А вот иероглиф в
+    комментарии — ровно тот ребус, который читатель видит вместо термина.
+    """
+    cjk = re.compile(r"[\u3000-\u9fff\uff00-\uffef\u3040-\u30ff]")
+    skip_dirs = ("references/cards", "references/translations", ".git", "node_modules")
+    skip_files = {"references/cards-index.json"}
+    exts = {".md", ".py", ".tsx", ".ts", ".html", ".yml", ".sh"}
+    for p in ROOT.rglob("*"):
+        if not p.is_file() or p.suffix not in exts:
+            continue
+        rel = p.relative_to(ROOT).as_posix()
+        if any(rel.startswith(d) for d in skip_dirs) or rel in skip_files:
+            continue
+        try:
+            text = p.read_text(encoding="utf-8")
+        except (UnicodeDecodeError, OSError):
+            continue
+        for i, line in enumerate(text.splitlines(), 1):
+            if not cjk.search(line):
+                continue
+            stripped = line.strip()
+            if p.suffix in {".py", ".sh"}:
+                # комментарий отбрасываем: там иероглиф — всегда дефект
+                code = stripped.split("#", 1)[0]
+                if not cjk.search(code):
+                    continue
+                if "#" not in code and ("\"" in code or "'" in code):
+                    continue  # строковый литерал — законный ключ апстрима
+            elif p.suffix in {".tsx", ".ts"}:
+                code = re.sub(r"//.*$", "", stripped).strip()
+                code = re.sub(r"^\s*\*.*$", "", code)
+                if not cjk.search(code):
+                    continue
+                if "\"" in code or "'" in code or "`" in code:
+                    continue
+            err(
+                f"{rel}:{i}: иероглифы в нашем тексте — "
+                "термин апстрима давать латиницей или по-русски"
+            )
+
+
 def main() -> int:
     n_cards = check_cards()
     check_index(n_cards)
@@ -224,6 +338,8 @@ def main() -> int:
     check_readme_numbers(n_cards)
     check_notice()
     check_diagram()
+    check_demo()
+    check_no_cjk_in_our_text()
 
     if errors:
         print(f"ПРОВАЛ: {len(errors)} ошибок:")
@@ -233,7 +349,8 @@ def main() -> int:
     cats = len({p.parent.name for p in CARDS.rglob("*.md")})
     print(
         f"OK: карточек {n_cards} в {cats} категориях, скиллов {n_skills}; "
-        "провенанс, индекс, ссылки, числа README и NOTICE согласованы"
+        "провенанс, индекс, ссылки, числа README и NOTICE согласованы; "
+        "демо-сборка на месте и воспроизводима"
     )
     return 0
 

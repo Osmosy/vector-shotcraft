@@ -75,7 +75,7 @@ def run_grid(audio: Path, fps: int) -> dict:
     return data
 
 
-def check(g: dict, bpm: float, label: str) -> list[str]:
+def check(g: dict, bpm: float, label: str, true_phase: float | None = None) -> list[str]:
     """Инварианты сетки. Реконструкцию темпа проверяем отдельно (check_tempo):
     абсолютный BPM на коротком окне ограничен точностью бит-трекера, а вот
     КАЧЕСТВО сетки от длины не зависит и проверяется строго."""
@@ -88,6 +88,26 @@ def check(g: dict, bpm: float, label: str) -> list[str]:
         bad.append(
             f"{label}: фаза сетки {g['grid_phase_s']} вне [0, {period:.3f}) — "
             "первый кадр уйдёт за начало трека"
+        )
+    # Фаза обязана попадать в ИСТИННЫЙ удар, а не просто лежать в [0, T).
+    # Это ловит систематическое опоздание beat_track на ~16 мс, из-за которого
+    # весь монтаж уезжает: раньше проверялось только «внутри периода».
+    if true_phase is not None:
+        delta = abs(g["grid_phase_s"] - true_phase)
+        delta = min(delta, abs(delta - period))
+        if delta > 0.010:
+            bad.append(
+                f"{label}: фаза сетки {g['grid_phase_s']:.4f} с расходится с истинным "
+                f"ударом {true_phase:.4f} с на {delta * 1000:.1f} мс (>10 мс)"
+            )
+    # Точность монтажа проверяем по grid_error_ms — отклонению реальных ударов
+    # от узлов сетки. residual_ms для этого не годится: он меряет разброс битов
+    # ТРЕКЕРА, у которого систематический лаг ~16 мс (метрика «ровности темпа»,
+    # её требует апстрим на длинной дистанции — проверяется в самом низу файла).
+    if g.get("grid_error_ms", 0.0) > 5.0:
+        bad.append(
+            f"{label}: удары отклоняются от узлов сетки на {g['grid_error_ms']} мс "
+            "(>5 мс) — склейка сядет «почти в такт»"
         )
     b = np.array(g["beats"])
     if b.size < 4:
@@ -130,7 +150,7 @@ def main() -> int:
             make_click_track(bpm, phase, dur, audio)
             g = run_grid(audio, fps)
             label = f"{bpm} BPM ({dur:.0f} с)"
-            bad = check(g, bpm, label) + check_tempo(g, bpm, label, 0.005)
+            bad = check(g, bpm, label, true_phase=phase) + check_tempo(g, bpm, label, 0.005)
             failures += bad
             print(
                 f"{'FAIL' if bad else 'OK  '} клик {bpm:6.1f} BPM ({dur:.0f} с, фаза {phase:.3f} с, "
@@ -144,7 +164,7 @@ def main() -> int:
         make_click_track(bpm, phase, dur, audio)
         g = run_grid(audio, fps)
         label = f"{bpm} BPM ({dur:.0f} с, длинный)"
-        bad = check(g, bpm, label) + check_tempo(g, bpm, label, 0.0005)
+        bad = check(g, bpm, label, true_phase=phase) + check_tempo(g, bpm, label, 0.0005)
         # на двух минутах требование апстрима применимо: остаток <= 15 мс
         if g["residual_ms"] > 15.0:
             bad.append(
