@@ -19,11 +19,12 @@ jobs:
       - name: Валидация репозитория
         run: python3 scripts/validate.py
 
-      - name: Проверка пересборки индекса (индекс должен быть актуален)
+      - name: Проверка актуальности сгенерированного индекса
         run: |
           python3 scripts/build_index.py
-          git diff --exit-code references/cards-index.json \
-            || (echo "cards-index.json устарел: пересоберите scripts/build_index.py"; exit 1)
+          python3 scripts/apply_translations.py
+          git diff --exit-code references/cards-index.md references/cards-index.json \
+            || (echo "индекс устарел: пересоберите build_index.py + apply_translations.py"; exit 1)
 
       - name: Установка зависимостей для бит-сетки
         run: pip install "librosa>=0.10,<1" "soundfile>=0.12,<1" "numpy>=1.26,<3"

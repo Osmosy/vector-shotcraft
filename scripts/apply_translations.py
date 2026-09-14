@@ -2,8 +2,8 @@
 """Собрать русский индекс, подставив переводы из батчей субагентов.
 
 Читает references/cards-index.json (сгенерирован build_index.py) и
-дополняет его русскими полями из /tmp/sc-translate/batchN.ru.json (либо из
-любого каталога, переданного через --translations).
+дополняет его русскими полями из references/translations/*.json (каталог
+можно переопределить через --translations).
 
 Строгая проверка полноты: если хоть одна карточка без перевода или имя
 карточки в переводе не совпало с исходным — скрипт падает с ошибкой, а не
@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "references" / "cards-index.json"
 CARDS = ROOT / "references" / "cards"
 OUT_MD = ROOT / "references" / "cards-index.md"
+DEFAULT_TRANSLATIONS = ROOT / "references" / "translations"
 
 CATEGORY_RU = {
     "camera": "камера и движение в пространстве",
@@ -148,8 +149,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--translations",
-        default="/tmp/sc-translate",
-        help="каталог с batch*.ru.json",
+        default=str(DEFAULT_TRANSLATIONS),
+        help="каталог с batch*.ru.json (по умолчанию references/translations)",
     )
     args = ap.parse_args()
 
