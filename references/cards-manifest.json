@@ -1,0 +1,1101 @@
+{
+ "references/shots/camera/basic-3d-scene.md": {
+  "sha1": "292b15c914192161a5b9894f7c7b64f1dbd953b7",
+  "bytes": 3028,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/basic-3d-scene.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/crash-zoom-punch.md": {
+  "sha1": "41d2f2dd857a7b1cf92e0fd4bfa3375ff715e870",
+  "bytes": 2044,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/crash-zoom-punch.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/cursor-flyover.md": {
+  "sha1": "a23e20912a91facb4cea5b93dd1af98e7f95c0c7",
+  "bytes": 2925,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/cursor-flyover.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/depth-layer-moves.md": {
+  "sha1": "c3cdf44f7d99a689cd66b2e85b7eab5492b1ef9a",
+  "bytes": 2254,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/depth-layer-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/graze-face-tour.md": {
+  "sha1": "b79420aff5cb9c2f07cf8de89df0a67d3d366889",
+  "bytes": 3630,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/graze-face-tour.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/overhead-camera-moves.md": {
+  "sha1": "2dc8b5f0bc24b7e1cae043988ff5b07363d9370e",
+  "bytes": 3435,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/overhead-camera-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/space-camera-moves.md": {
+  "sha1": "75930f19cb86405b9a695878d8e4fc47e38788bb",
+  "bytes": 3192,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/space-camera-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/steep-tilt-glide.md": {
+  "sha1": "94ecb21645131a4887a8e27ac9bc3afe9dd86032",
+  "bytes": 3218,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/steep-tilt-glide.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/tension-camera-moves.md": {
+  "sha1": "491daae8743987e93e1d1bdb265285e1f593ae98",
+  "bytes": 4763,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/tension-camera-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/camera/terminal-3d.md": {
+  "sha1": "890a246a59dc65f5d338e76d5c07ce6aaaad7bb7",
+  "bytes": 2962,
+  "category": "camera",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/camera/terminal-3d.md",
+  "vendored_header": true
+ },
+ "references/shots/data/avatar-grid-radial-build-colorize.md": {
+  "sha1": "094c44fab856aa8684d4ad0e4e31660144c5cbb4",
+  "bytes": 3305,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/avatar-grid-radial-build-colorize.md",
+  "vendored_header": true
+ },
+ "references/shots/data/before-after-slider-scrub.md": {
+  "sha1": "6afd6817343ef78d522c3cad9adc3f21ddefa7b9",
+  "bytes": 2390,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/before-after-slider-scrub.md",
+  "vendored_header": true
+ },
+ "references/shots/data/chart-live-moves.md": {
+  "sha1": "40b207904a4a617106f2779a25b3cdb53b506958",
+  "bytes": 3375,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/chart-live-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/data/counter-confetti.md": {
+  "sha1": "f896057faf225e1efecc0b5cda3cde55f48bfbf6",
+  "bytes": 2888,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/counter-confetti.md",
+  "vendored_header": true
+ },
+ "references/shots/data/cycle-glass-node-morph.md": {
+  "sha1": "531d24e42b37b20a48e4ce819f30280653f4ebb4",
+  "bytes": 4440,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/cycle-glass-node-morph.md",
+  "vendored_header": true
+ },
+ "references/shots/data/gauge-readout-moves.md": {
+  "sha1": "96a702bf1ee70cc7338bf532232fb25a27cbc151",
+  "bytes": 2755,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/gauge-readout-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/data/hatch-depth.md": {
+  "sha1": "c4b694d69bfbaaa84be522ede931ce667a297fa5",
+  "bytes": 2982,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/hatch-depth.md",
+  "vendored_header": true
+ },
+ "references/shots/data/odometer-digit-roll.md": {
+  "sha1": "ffa88254d548580ddd7e12f7dda3c2b4347bac2c",
+  "bytes": 3317,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/odometer-digit-roll.md",
+  "vendored_header": true
+ },
+ "references/shots/data/particle-celebrate-hits.md": {
+  "sha1": "79e428fa934e3c65636c4d107bc3a639d38ae82c",
+  "bytes": 2715,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/particle-celebrate-hits.md",
+  "vendored_header": true
+ },
+ "references/shots/data/particle-sand-fill.md": {
+  "sha1": "8adb3cf99c42f9ec40da0761f8ebdeabf5f9513a",
+  "bytes": 2192,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/particle-sand-fill.md",
+  "vendored_header": true
+ },
+ "references/shots/data/ring-diagram-annotation-reveal.md": {
+  "sha1": "a8775c92e1245a14054668692769c822d27eb609",
+  "bytes": 3951,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/ring-diagram-annotation-reveal.md",
+  "vendored_header": true
+ },
+ "references/shots/data/scroll-brake-moves.md": {
+  "sha1": "3797c18e95d0663c6c826e25325c11e6e96a5f2e",
+  "bytes": 2964,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/scroll-brake-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/data/timeline-travel.md": {
+  "sha1": "98d439f1bb6962e6a155bc96c9ec266210ea1106",
+  "bytes": 2513,
+  "category": "data",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/data/timeline-travel.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/assemble-then-type-flyin.md": {
+  "sha1": "e3afda7dca41cc08b79e308c8e36fbce3fe71df8",
+  "bytes": 3955,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/assemble-then-type-flyin.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/aurora-bloom-bg-flip.md": {
+  "sha1": "c61b8c2bac91cf88660c3ccf39f113f9892dfca0",
+  "bytes": 3513,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/aurora-bloom-bg-flip.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/brand-frame-snap.md": {
+  "sha1": "d8f7faafbbda086eed99235fbba54a402e8b65fa",
+  "bytes": 3557,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/brand-frame-snap.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/dashboard-glow-highlight-pill.md": {
+  "sha1": "8e56c346de17f17f6b33d0e2208dbf7622529d45",
+  "bytes": 4280,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/dashboard-glow-highlight-pill.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/fui-hud-moves.md": {
+  "sha1": "c98fed4ae0f30bfe090edf8ed7e6da258e455cdc",
+  "bytes": 2663,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/fui-hud-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/glow-flyline-moves.md": {
+  "sha1": "9c0c862c0760ff973506dd06929ddc804038f282",
+  "bytes": 3631,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/glow-flyline-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/icon-performance-moves.md": {
+  "sha1": "5d8e7d893d0703b137993320a9d0dab773092b87",
+  "bytes": 2904,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/icon-performance-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/impact-feedback.md": {
+  "sha1": "6cbf9e095e789948f9aa0ddceaf2f59e47f4c270",
+  "bytes": 3443,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/impact-feedback.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/light-play-moves.md": {
+  "sha1": "5e8573091c9c94d12ca939bb6638065f9faa642a",
+  "bytes": 3353,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/light-play-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/line-boil.md": {
+  "sha1": "524744fc73b88f534ef5413f120779ab310ec44d",
+  "bytes": 3159,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/line-boil.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/radial-ripple-phone-chips.md": {
+  "sha1": "d8e15a69e877f2a53d236ef4389bc4bceafb7583",
+  "bytes": 3150,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/radial-ripple-phone-chips.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/riso-print-hits.md": {
+  "sha1": "09cae7e99688aac52da70a994d9010538d9a9d43",
+  "bytes": 3947,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/riso-print-hits.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/scan-bracket-sweep.md": {
+  "sha1": "74e2998775f2a683977a7065e54a4df157d550e8",
+  "bytes": 3117,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/scan-bracket-sweep.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/scanline-annotate-focus.md": {
+  "sha1": "a5566c735154b6b5eeda3541cd4d1645f85afdb1",
+  "bytes": 3534,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/scanline-annotate-focus.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/scanline-assemble-flyin.md": {
+  "sha1": "a1553dd8afa92dde110b701e119f9cc9fd88a7a5",
+  "bytes": 3767,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/scanline-assemble-flyin.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/slam-entrance-moves.md": {
+  "sha1": "67469b2c2aa092775c8ed3b860c0d49289b949a2",
+  "bytes": 3816,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/slam-entrance-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/effects/spotlight-sweep-moves.md": {
+  "sha1": "0ef8514dab9fbb5021a165e2d25949c53c260619",
+  "bytes": 3562,
+  "category": "effects",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/effects/spotlight-sweep-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/ai-stream-response.md": {
+  "sha1": "48b9ff2713000b8357350337fe9237908d76c3c2",
+  "bytes": 3440,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/ai-stream-response.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/autolayout-gap-dial.md": {
+  "sha1": "b85b55a8d18a7789da4493bab5d979c0be80be22",
+  "bytes": 3729,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/autolayout-gap-dial.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/canvas-materialize-moves.md": {
+  "sha1": "4ead1beff40f87936ffbcc6ee6bf06343d3f9472",
+  "bytes": 4493,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/canvas-materialize-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/chip-grid-single-select-blackout.md": {
+  "sha1": "4f0e30498b756afcf3925a68c4320e61b83947f2",
+  "bytes": 3977,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/chip-grid-single-select-blackout.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/chip-lift-to-user-pill.md": {
+  "sha1": "803358ebb2ea5f40d16f67a8b97f1aad95fad306",
+  "bytes": 4039,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/chip-lift-to-user-pill.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/collab-cursor-moves.md": {
+  "sha1": "9667fb7c04bff631ab91083bdf237d6041960220",
+  "bytes": 4510,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/collab-cursor-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/command-palette-summon.md": {
+  "sha1": "93cff03669373369d91032c30cc15f7ed5f1f145",
+  "bytes": 2420,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/command-palette-summon.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/glass-pill-dictation-typing.md": {
+  "sha1": "4597279583e5c5800d29ea75248e88c97278a60a",
+  "bytes": 3845,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/glass-pill-dictation-typing.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/hashtag-to-pill-materialize.md": {
+  "sha1": "76558fb30888a2d8cd8b96a52514da1393409d2d",
+  "bytes": 4009,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/hashtag-to-pill-materialize.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/input-trigger-moves.md": {
+  "sha1": "d375f2bc41a0966bbce04c65eff682c2918d3b6f",
+  "bytes": 3384,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/input-trigger-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/picker-carousel-feature-cycle.md": {
+  "sha1": "0b5b0443e471e13076c94674f073da8276f2f95c",
+  "bytes": 3802,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/picker-carousel-feature-cycle.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/segmented-thumb-hero.md": {
+  "sha1": "a780ac0e6e66834378f6d9b618ab96e84a321676",
+  "bytes": 3757,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/segmented-thumb-hero.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/theme-switch-moves.md": {
+  "sha1": "e78f82373c22d6c52b09e7e2bea4f83a54813aad",
+  "bytes": 2760,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/theme-switch-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/type-and-filter.md": {
+  "sha1": "5916f2da02e61321eb78c67bd6845fb5acde8103",
+  "bytes": 2891,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/type-and-filter.md",
+  "vendored_header": true
+ },
+ "references/shots/interaction/voice-waveform-live.md": {
+  "sha1": "bfe2b8e3b90e0cb2fc506f0f2a491d83f6b0d112",
+  "bytes": 3740,
+  "category": "interaction",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/interaction/voice-waveform-live.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/brand-ink-open.md": {
+  "sha1": "72fbfa25ec296a7be210b005c72f0c886b82b2bf",
+  "bytes": 2462,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/brand-ink-open.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/crane-rise-reveal.md": {
+  "sha1": "5f8b709e8aea4290e99017be1e9bfa26354d6a55",
+  "bytes": 2920,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/crane-rise-reveal.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/dataviz-landscape-open.md": {
+  "sha1": "e5b28972c201ea82331637c7b11ca5b10c1f873e",
+  "bytes": 4822,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/dataviz-landscape-open.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/fracture.md": {
+  "sha1": "8d34aabee6c5dd7888af56d93ed370aa22008172",
+  "bytes": 3184,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/fracture.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/icon-field-colorize.md": {
+  "sha1": "4424fac5052ef04623f0093ef496a5de52043374",
+  "bytes": 3339,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/icon-field-colorize.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/letterspace-materialize.md": {
+  "sha1": "ed9882282b9e6e390ab3f43ba4974334b44c7e2b",
+  "bytes": 3206,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/letterspace-materialize.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/magician-card-flourish.md": {
+  "sha1": "a863f0efaee1af1a55909992d3654f7a95bba385",
+  "bytes": 4375,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/magician-card-flourish.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/orbit-ring-title-open.md": {
+  "sha1": "d03f08a6d8422dd2e7184032b7bf7dac8b6655ef",
+  "bytes": 7599,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/orbit-ring-title-open.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/spotlight-hero-card.md": {
+  "sha1": "829c61a40d9a90c3e45196ed7222e4b6640fd647",
+  "bytes": 3785,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/spotlight-hero-card.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/stroke-segment-build.md": {
+  "sha1": "7becd457b6259b178d68d0384ef4679ad0657b71",
+  "bytes": 2499,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/stroke-segment-build.md",
+  "vendored_header": true
+ },
+ "references/shots/opening/text-as-mask.md": {
+  "sha1": "7b9fa4b52052e8303f2ef1a041a77d02cb1344a2",
+  "bytes": 3100,
+  "category": "opening",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/opening/text-as-mask.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/edit-hook-moves.md": {
+  "sha1": "f0c7350052f8685cbde9d97484e29bafabd9695b",
+  "bytes": 1926,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/edit-hook-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/grain-dissolve.md": {
+  "sha1": "dba181c1be76e7418d20f208af80802fd85afff3",
+  "bytes": 3070,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/grain-dissolve.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/logo-shrink-wordmark-lockup.md": {
+  "sha1": "686425d3d488380c8531666c688ed48dde617bce",
+  "bytes": 3108,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/logo-shrink-wordmark-lockup.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/neon-triple-marquee.md": {
+  "sha1": "e1a2a4a7da24a9af94fe58c4782b1301ed051d0e",
+  "bytes": 3790,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/neon-triple-marquee.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/outro-group-photo-launch.md": {
+  "sha1": "ea1797087068771e00b5f804e9a095f2438e80d1",
+  "bytes": 3540,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/outro-group-photo-launch.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/ui-strip-away-outro.md": {
+  "sha1": "ce19412a1fad3c3349972c17379c28fbee80390f",
+  "bytes": 4132,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/ui-strip-away-outro.md",
+  "vendored_header": true
+ },
+ "references/shots/outro/ui-to-brand-morph.md": {
+  "sha1": "efd214224f70977ed0bfafcbe0f86dbf7bb7271a",
+  "bytes": 4749,
+  "category": "outro",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/outro/ui-to-brand-morph.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/beat-cut-moves.md": {
+  "sha1": "29e86ccdecd706655d5b838b3e402338a6e3194c",
+  "bytes": 4255,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/beat-cut-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/beat-step-list-theme-cycle.md": {
+  "sha1": "0375f6a15308d3e920ce422fb54f420b569246d5",
+  "bytes": 3894,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/beat-step-list-theme-cycle.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/montage-rhythm-moves.md": {
+  "sha1": "a7dc7a18cbd81f608ae39657516e399b062d9e9c",
+  "bytes": 4450,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/montage-rhythm-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/panel-grid-moves.md": {
+  "sha1": "bb361de7b5ce7da478143a493e9629d8c2d73504",
+  "bytes": 3970,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/panel-grid-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/quad-split-parallel-scenes.md": {
+  "sha1": "23852be4a8633118b29312966864ef60dd83b539",
+  "bytes": 3220,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/quad-split-parallel-scenes.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/rhythm-interrupt-moves.md": {
+  "sha1": "dd3f7a4fabdee284d16fb885a16597b62f590d94",
+  "bytes": 2575,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/rhythm-interrupt-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/sakuga-timing-shift.md": {
+  "sha1": "b5481d1e5308c13e1cbc7475039e8235efdaf5ea",
+  "bytes": 2881,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/sakuga-timing-shift.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/smear-multiples.md": {
+  "sha1": "699a172ae7e5b8cab5c49527278e36bb81836457",
+  "bytes": 2927,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/smear-multiples.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/spectrum-morph-ui.md": {
+  "sha1": "f080b888fbc49dafc88c1933ea4276fbc91bc51c",
+  "bytes": 3066,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/spectrum-morph-ui.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/speed-ramp-freeze.md": {
+  "sha1": "83e69d5020a50a38b3784a0b88f97f896dd0f4d1",
+  "bytes": 2319,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/speed-ramp-freeze.md",
+  "vendored_header": true
+ },
+ "references/shots/rhythm/trailer-grammar-moves.md": {
+  "sha1": "3fdb9fdf6c58341eb9a5f574e8eda5141191ba12",
+  "bytes": 3740,
+  "category": "rhythm",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/rhythm/trailer-grammar-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/bottom-push-stack-wipe.md": {
+  "sha1": "52829ac1ccecc83c6ad8b34394ea1c442d95c80c",
+  "bytes": 3787,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/bottom-push-stack-wipe.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/bubble-swarm-takeover.md": {
+  "sha1": "e2b54f6e4c8accf2e7f1dbc695ad2768a25b7896",
+  "bytes": 4171,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/bubble-swarm-takeover.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/card-flip-reveal.md": {
+  "sha1": "235b67688f0f1ca7c372ec6fbc2b85d3c39c1940",
+  "bytes": 2873,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/card-flip-reveal.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/card-flock-tumble.md": {
+  "sha1": "af7770f9f948b19f57e360a5fccce77e6e5f9fe9",
+  "bytes": 3427,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/card-flock-tumble.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/circle-match-iris.md": {
+  "sha1": "e7b0d24ba81cbe666e4ffba03f024000975033af",
+  "bytes": 3367,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/circle-match-iris.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/color-block-step-wipe.md": {
+  "sha1": "554d1b5d84142b75039d732ee2683c026a17af12",
+  "bytes": 3735,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/color-block-step-wipe.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/cube-navigation.md": {
+  "sha1": "2f477cf674cc4287945fe173e86efe889d3689b5",
+  "bytes": 2978,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/cube-navigation.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/gradient-transition.md": {
+  "sha1": "fe589f206a1b8758b3228a3f36d5234c2645fb8d",
+  "bytes": 2925,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/gradient-transition.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/line-carry-transition.md": {
+  "sha1": "be1ef36a496b891c20734ff79b023fce6193ae95",
+  "bytes": 3260,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/line-carry-transition.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/mosaic-reframe.md": {
+  "sha1": "0177093e911f10b5072e83fe1cd60b492767113f",
+  "bytes": 2912,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/mosaic-reframe.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/page-turn-transitions.md": {
+  "sha1": "be1fd2343a4bce2ed0f12568541f90c479051a95",
+  "bytes": 3329,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/page-turn-transitions.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/paper-plane-messenger.md": {
+  "sha1": "85715961a9ffff0614bf186b060cde70f897efcb",
+  "bytes": 4234,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/paper-plane-messenger.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/print-texture-transitions.md": {
+  "sha1": "cd2d215ae140a5d983ee0143f1f7fe6ca46e7475",
+  "bytes": 2505,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/print-texture-transitions.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/shot-transitions.md": {
+  "sha1": "eba14b77fd613569aa9bec1b40410cdbb000dc8f",
+  "bytes": 6434,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/shot-transitions.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/tear-streak-transitions.md": {
+  "sha1": "780c778108f0ff328b7e497ebb77b21af0f3d76c",
+  "bytes": 2559,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/tear-streak-transitions.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/transition-hidden-cut.md": {
+  "sha1": "404fc6216d698390621146b6dea3a60923e88204",
+  "bytes": 4825,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/transition-hidden-cut.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/transition-travel.md": {
+  "sha1": "cd42213d2359eda60c0093bf83b4a924e37cb1b1",
+  "bytes": 3993,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/transition-travel.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/white-flash-logo-simplify-cut.md": {
+  "sha1": "ea2c7c8be2e9b1bd0345ade18b2772a382cb85d8",
+  "bytes": 2910,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/white-flash-logo-simplify-cut.md",
+  "vendored_header": true
+ },
+ "references/shots/transition/wipe-transitions.md": {
+  "sha1": "ca422f7adaceae6fd2f961702e542531f892f1c7",
+  "bytes": 3277,
+  "category": "transition",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/transition/wipe-transitions.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/blur-slide.md": {
+  "sha1": "2725a06fe957c8743bb9f1465e67c611f2ac4264",
+  "bytes": 3967,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/blur-slide.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/brace-expand.md": {
+  "sha1": "3721dfe7c7551e54695aaa28e9d97d3d9141c287",
+  "bytes": 4463,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/brace-expand.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/cel-flash-stomp.md": {
+  "sha1": "d6db76b46781b3321cf817d2852722ca5d169738",
+  "bytes": 3274,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/cel-flash-stomp.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/countdown-arc-scatter.md": {
+  "sha1": "f8e7748ca70273461c8196ce822ebe046b4c1457",
+  "bytes": 5367,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/countdown-arc-scatter.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/document-typewriter-reveal.md": {
+  "sha1": "051e04d4dd374d3aafbe9e41702fb5f40134455d",
+  "bytes": 3644,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/document-typewriter-reveal.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/flying-words.md": {
+  "sha1": "20bd33a96229c04a272d90514073782fbf2c45f2",
+  "bytes": 4355,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/flying-words.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/glitch-cycle.md": {
+  "sha1": "2df9050428d3a839f98db5d08bd6305bd26e50eb",
+  "bytes": 4651,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/glitch-cycle.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/gradient-word-sweep.md": {
+  "sha1": "e37295379b204fcd354e324095867678efa77435",
+  "bytes": 3124,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/gradient-word-sweep.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/lead-word-zoom-assemble.md": {
+  "sha1": "bc7631d641fa7d3fc7623d1648ac71203f546134",
+  "bytes": 7433,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/lead-word-zoom-assemble.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/marker-underline-title.md": {
+  "sha1": "88c4068b17ca1c167a9b6ab654936ddcef16a984",
+  "bytes": 2700,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/marker-underline-title.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/outline-word-fill.md": {
+  "sha1": "e79d9641cdf773ebc1254732e79a82a8588159d1",
+  "bytes": 5263,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/outline-word-fill.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/paper-title-card.md": {
+  "sha1": "8818c7d16125b9cb9ef8b11cfaa878e2e060c80e",
+  "bytes": 2814,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/paper-title-card.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/pill-chip-slot-cycle-handled.md": {
+  "sha1": "d1c2aa5d7c9d9b1c38fcbe2ff7b86bbe18da870e",
+  "bytes": 5129,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/pill-chip-slot-cycle-handled.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/pill-slot-cycle.md": {
+  "sha1": "08c848a5a497a65ca2c6f85b101492d7f31d2512",
+  "bytes": 3680,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/pill-slot-cycle.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/scramble.md": {
+  "sha1": "5307456812d263d79ccc2ca50eabadebdb07d398",
+  "bytes": 3729,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/scramble.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/split-flap-title.md": {
+  "sha1": "f79a3c408abd4606fee912dce5f25aec002bb6ff",
+  "bytes": 4128,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/split-flap-title.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/text-column-converge.md": {
+  "sha1": "e83da1dcc1973ad72552b9c64de3ca9c0874553a",
+  "bytes": 3809,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/text-column-converge.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/title-demote-to-label.md": {
+  "sha1": "2bdebfc894aa0d50ee1b004f9c063845a2041284",
+  "bytes": 3942,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/title-demote-to-label.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/type-assembly-moves.md": {
+  "sha1": "007cc8eb71941c04a18890fbeb813f8d8bd14ca3",
+  "bytes": 3690,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/type-assembly-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/type-entrance-moves.md": {
+  "sha1": "fde7144b91b9e6b51b192888d6ab3b41740a628a",
+  "bytes": 3656,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/type-entrance-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/type-rhythm-sync.md": {
+  "sha1": "32a115579c9b66bc259267c79419706b9cf3c00f",
+  "bytes": 3663,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/type-rhythm-sync.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/typewriter-moves.md": {
+  "sha1": "036420a643f23b51b1ee6ad5c5e482c3be33b77a",
+  "bytes": 3324,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/typewriter-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/typing-code-block.md": {
+  "sha1": "8e939f64e64e683ab23a46219ef91f93ff1c033c",
+  "bytes": 4426,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/typing-code-block.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/vertical-word-roll-blur-cycle.md": {
+  "sha1": "09d01616be923319dfeb7edd98bfa1ba8b01a839",
+  "bytes": 4571,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/vertical-word-roll-blur-cycle.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/word-relay-filmstrip.md": {
+  "sha1": "74116848540001c7f6707ccff30713810891069f",
+  "bytes": 3141,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/word-relay-filmstrip.md",
+  "vendored_header": true
+ },
+ "references/shots/typography/word-relay-geometry.md": {
+  "sha1": "e35dc50e8357fd702dd02047dec62d37c190e20e",
+  "bytes": 5659,
+  "category": "typography",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/typography/word-relay-geometry.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/avatar-bracket-carousel.md": {
+  "sha1": "970c42bc29a398e8e1a81e5427e393976022d374",
+  "bytes": 5010,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/avatar-bracket-carousel.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/bezier-source-converge-merge.md": {
+  "sha1": "134a1b304d48f5d29e3753b2a869b218b266dd10",
+  "bytes": 5735,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/bezier-source-converge-merge.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/card-stack.md": {
+  "sha1": "d9e103535cf1ec1738cc076e9efac86dcc040d6f",
+  "bytes": 4115,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/card-stack.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/carousel-3d.md": {
+  "sha1": "376281651d46db7ed3c32e6be207d11e69a5fab4",
+  "bytes": 4962,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/carousel-3d.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/cloner-depth-echo.md": {
+  "sha1": "a4ac319a14a2394827ab92755ec9d8ad9bee12a2",
+  "bytes": 2195,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/cloner-depth-echo.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/deck-deal-flyin.md": {
+  "sha1": "eeb84ec8643c0e70ace2f0694c1f2e810ff43624",
+  "bytes": 6879,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/deck-deal-flyin.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/doc-park-left-pill-deal.md": {
+  "sha1": "cf498243eb6a83ab3e735905fba872282a88467d",
+  "bytes": 5098,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/doc-park-left-pill-deal.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/draw-svg-trace.md": {
+  "sha1": "0c9b9508ceec315e2dadff2f9fda9df7fa5948a8",
+  "bytes": 2863,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/draw-svg-trace.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/element-body-moves.md": {
+  "sha1": "6fc080a71a593b401d9d33bc8980a126af85731b",
+  "bytes": 3467,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/element-body-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/floating-glossy-label-pills.md": {
+  "sha1": "bf108f082345e8d8ca48f23b19205192f739e64e",
+  "bytes": 6592,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/floating-glossy-label-pills.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/integration-hub-map.md": {
+  "sha1": "b87b1b55a0337f9f021fcaf52f8337a5449fb866",
+  "bytes": 3524,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/integration-hub-map.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/list-reveal.md": {
+  "sha1": "555d6bfdee8d0718b8ad3bc61e8f1328a54a73fe",
+  "bytes": 4071,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/list-reveal.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/list-stack-press.md": {
+  "sha1": "597b6c6579504e32e3f7c4b61c9debd1de23af49",
+  "bytes": 4386,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/list-stack-press.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/morph-from-primitive.md": {
+  "sha1": "f4486e1c2a1a577305c8731e02b1b92a86aca5c8",
+  "bytes": 2946,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/morph-from-primitive.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/neon-frame-forerun.md": {
+  "sha1": "baafe20c2ea6608ee8762bbeefa08e195a1be4e6",
+  "bytes": 3240,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/neon-frame-forerun.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/neon-frame-orbit-drop.md": {
+  "sha1": "6da7d2a5df8a79a05dd3bf7e35f3559d3de7658e",
+  "bytes": 3005,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/neon-frame-orbit-drop.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/page-waterfall-wall.md": {
+  "sha1": "de59daa2e5e19c9eb5af1917742dbdb0ef41e865",
+  "bytes": 3456,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/page-waterfall-wall.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/paper-craft-moves.md": {
+  "sha1": "0f973f7d88faf54fc07658942ca01a52fc32aaa6",
+  "bytes": 3158,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/paper-craft-moves.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/platform-hinge-rise.md": {
+  "sha1": "cc1511c5fccb3856fac0c8eac75e7487eb61d6af",
+  "bytes": 3428,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/platform-hinge-rise.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/product-card-progressive-assemble.md": {
+  "sha1": "734ea086fae7330e40dbf8c5a585b4c643f86a23",
+  "bytes": 5077,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/product-card-progressive-assemble.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/radial-wave.md": {
+  "sha1": "9d34247cdead2bdc74aab266d2b32dc3f7d7056d",
+  "bytes": 3913,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/radial-wave.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/research-card-stack-scroll.md": {
+  "sha1": "feeccd626bf042093b0c02cd60451aca91b2f473",
+  "bytes": 4855,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/research-card-stack-scroll.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/row-embed.md": {
+  "sha1": "8f34a934f5b1dbd87243222e2cd95fbbd6e20214",
+  "bytes": 2614,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/row-embed.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/runway-ground-skim.md": {
+  "sha1": "78d197751b7aee803a815b912c3a6a1c5e2f3120",
+  "bytes": 3069,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/runway-ground-skim.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/skeleton-reveal.md": {
+  "sha1": "8f66bb57fc634da6d1561d071a4b5d266e278145",
+  "bytes": 3805,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/skeleton-reveal.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/svg-shape-morph.md": {
+  "sha1": "58604ec7be412455d0d845cff3f7b6e3245c65e6",
+  "bytes": 5216,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/svg-shape-morph.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/value-stagger-gradient.md": {
+  "sha1": "2129f571fbfd44d0118d04ed2c562bf6bba6d3bf",
+  "bytes": 5481,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/value-stagger-gradient.md",
+  "vendored_header": true
+ },
+ "references/shots/ui-entrance/wall-reveal-moves.md": {
+  "sha1": "c22470bc0f46a177721bd7117c10e137cd5ad63c",
+  "bytes": 5543,
+  "category": "ui-entrance",
+  "upstream": "https://github.com/Vincentwei1021/video-shotcraft/blob/HEAD/references/shots/ui-entrance/wall-reveal-moves.md",
+  "vendored_header": true
+ }
+}

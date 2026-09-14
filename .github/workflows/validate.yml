@@ -1,0 +1,32 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [master, main]
+
+jobs:
+  repo:
+    name: Валидация репозитория и бит-сетки
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Валидация репозитория
+        run: python3 scripts/validate.py
+
+      - name: Проверка пересборки индекса (индекс должен быть актуален)
+        run: |
+          python3 scripts/build_index.py
+          git diff --exit-code references/cards-index.json \
+            || (echo "cards-index.json устарел: пересоберите scripts/build_index.py"; exit 1)
+
+      - name: Установка зависимостей для бит-сетки
+        run: pip install "librosa>=0.10,<1" "soundfile>=0.12,<1" "numpy>=1.26,<3"
+
+      - name: Тест бит-сетки на синтетике с известным темпом
+        run: python3 tests/test_beat_grid.py
