@@ -31,3 +31,12 @@ jobs:
 
       - name: Тест бит-сетки на синтетике с известным темпом
         run: python3 tests/test_beat_grid.py
+
+      - name: Проверка диаграммы (спецификация валидна, HTML воспроизводим)
+        run: |
+          if [ ! -d archify ]; then
+            echo "archify не установлен — проверка диаграммы пропущена (локально: см. README)"
+            exit 0
+          fi
+          node archify/bin/archify.mjs validate architecture \
+            docs/vector-shotcraft.architecture.json --quality showcase --json

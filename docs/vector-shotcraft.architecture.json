@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Vector Shotcraft — библиотека приёмов и инструменты",
+    "output": "docs/vector-shotcraft.architecture.html",
+    "quality_profile": "showcase",
+    "views": [
+      {
+        "id": "content-path",
+        "label": "Приёмы: от источника до раскадровки",
+        "focus": [
+          "upstream",
+          "cards",
+          "index",
+          "storyboard",
+          "render"
+        ],
+        "note": "Карточки вендорены из апстрима со сверкой SHA1, русский индекс переводит их в «что делает и когда брать»."
+      },
+      {
+        "id": "bit-sync",
+        "label": "Ритм: сетка битов",
+        "focus": [
+          "bgm",
+          "grid",
+          "storyboard",
+          "frames",
+          "render"
+        ],
+        "note": "Музыка первична: сетка считается раньше раскадровки, кадры пересчитываются один раз и только в конце."
+      },
+      {
+        "id": "sound",
+        "label": "Звук по категориям",
+        "focus": [
+          "sfx",
+          "grid",
+          "render"
+        ],
+        "note": "Словарь даёт 16 категорий: сначала категория по действию в кадре, потом тембр; ставится по тактам сетки."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "upstream",
+      "type": "external",
+      "label": "Апстрим",
+      "sublabel": "video-shotcraft",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        150,
+        60
+      ],
+      "tag": "Apache-2.0"
+    },
+    {
+      "id": "cards",
+      "type": "database",
+      "label": "Карточки шотов",
+      "sublabel": "157 в 10 категориях",
+      "pos": [
+        270,
+        60
+      ],
+      "size": [
+        150,
+        64
+      ]
+    },
+    {
+      "id": "index",
+      "type": "frontend",
+      "label": "Русский индекс",
+      "sublabel": "суть и когда брать",
+      "pos": [
+        500,
+        60
+      ],
+      "size": [
+        150,
+        64
+      ]
+    },
+    {
+      "id": "storyboard",
+      "type": "backend",
+      "label": "Раскадровка",
+      "sublabel": "приёмы и параметры",
+      "pos": [
+        730,
+        60
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "render",
+      "type": "cloud",
+      "label": "Монтаж и рендер",
+      "sublabel": "свой стек",
+      "pos": [
+        950,
+        60
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "bgm",
+      "type": "external",
+      "label": "BGM",
+      "sublabel": "трек под смысл",
+      "pos": [
+        40,
+        300
+      ],
+      "size": [
+        130,
+        60
+      ]
+    },
+    {
+      "id": "grid",
+      "type": "security",
+      "label": "Сетка битов",
+      "sublabel": "beat_grid.py",
+      "pos": [
+        270,
+        300
+      ],
+      "size": [
+        150,
+        64
+      ],
+      "tag": "PDM + два прохода отсева"
+    },
+    {
+      "id": "frames",
+      "type": "database",
+      "label": "Кадры",
+      "sublabel": "grid.json → frames",
+      "pos": [
+        500,
+        300
+      ],
+      "size": [
+        150,
+        60
+      ],
+      "tag": "округление один раз"
+    },
+    {
+      "id": "sfx",
+      "type": "database",
+      "label": "Словарь звука",
+      "sublabel": "16 категорий",
+      "pos": [
+        270,
+        460
+      ],
+      "size": [
+        150,
+        60
+      ],
+      "tag": "sfx-catalog.md"
+    }
+  ],
+  "connections": [
+    {
+      "id": "upstream-to-cards",
+      "from": "upstream",
+      "to": "cards",
+      "label": "вендоринг"
+    },
+    {
+      "id": "cards-to-index",
+      "from": "cards",
+      "to": "index",
+      "label": "индекс и перевод",
+      "labelAt": [
+        460,
+        138
+      ]
+    },
+    {
+      "id": "index-to-storyboard",
+      "from": "index",
+      "to": "storyboard",
+      "label": "приёмы выбраны",
+      "variant": "emphasis"
+    },
+    {
+      "id": "storyboard-to-render",
+      "from": "storyboard",
+      "to": "render",
+      "label": "таймлайн",
+      "variant": "emphasis"
+    },
+    {
+      "id": "bgm-to-grid",
+      "from": "bgm",
+      "to": "grid",
+      "label": "сетка до раскадровки",
+      "labelAt": [
+        220,
+        374
+      ]
+    },
+    {
+      "id": "sfx-to-grid",
+      "from": "sfx",
+      "to": "grid",
+      "label": "звуки по тактам",
+      "variant": "dashed"
+    },
+    {
+      "id": "grid-to-frames",
+      "from": "grid",
+      "to": "frames",
+      "label": "frames"
+    },
+    {
+      "id": "frames-to-render",
+      "from": "frames",
+      "to": "render",
+      "label": "кадры в монтаж",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          575,
+          420
+        ],
+        [
+          1020,
+          420
+        ],
+        [
+          1020,
+          200
+        ]
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Приёмы",
+      "items": [
+        "157 карточек в 10 категориях",
+        "оригинальный текст с кадрами и кривыми",
+        "русский индекс: суть и когда брать"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Ритм",
+      "items": [
+        "сетка считается до раскадровки",
+        "период методом PDM, фаза медианой",
+        "кадры пересчитываются один раз"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Контроль",
+      "items": [
+        "SHA1 тела карточки против манифеста",
+        "полнота индекса и ссылки",
+        "тест сетки на известном темпе"
+      ]
+    }
+  ]
+}

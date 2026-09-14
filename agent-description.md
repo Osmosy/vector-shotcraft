@@ -20,6 +20,7 @@
 - Приёмы — `references/cards/<категория>/<имя>.md` (оригинальный текст с числами)
 - Русский индекс — `references/cards-index.md` (что делает, когда брать)
 - Методики — `references/beat-sync.md`, `references/sfx-catalog.md`
+- Архитектура (живая диаграмма) — `docs/vector-shotcraft.architecture.html`
 - Навык — `skills/vector-shotcraft/SKILL.md`
 - Перед коммитом прогоняй: `python3 scripts/validate.py` и
   `python3 tests/test_beat_grid.py` (то же выполняет CI в
@@ -35,9 +36,11 @@
 | Карточки шотов | 157 (`references/cards/`) в 10 категориях |
 | Русский индекс | 157 записей (`references/cards-index.md`) |
 | Методики | 2 (`references/beat-sync.md`, `references/sfx-catalog.md`) |
+| Категорий звука | 16 (`references/sfx-catalog.md`) |
 | Скрипты | 5 (`scripts/`) |
 | Тесты | 1 (`tests/test_beat_grid.py`, 4 случая на синтетике) |
 | Навыки | 1 (`skills/vector-shotcraft/`) |
+| Диаграмма | 1 живая (`docs/vector-shotcraft.architecture.html`) |
 
 ## Источник и лицензии
 

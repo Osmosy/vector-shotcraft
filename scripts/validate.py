@@ -7,9 +7,10 @@
   2. каждая карточка имеет шапку провенанса с корректной ссылкой на источник;
   3. у каждой карточки в индексе есть все четыре русских поля;
   4. каждый скилл существует и имеет frontmatter с name/description;
-  5. каждая ссылка на файл внутри README.md и references/*.md существует;
+  5. каждая ссылка на файл внутри markdown-документов существует;
   6. числа в README (сколько карточек, сколько категорий) совпадают с фактом;
-  7. NOTICE.md перечисляет лицензию апстрима.
+  7. NOTICE.md перечисляет лицензию апстрима;
+  8. документация упоминает живую диаграмму, и её файлы на месте.
 
 Запуск: python3 scripts/validate.py
 CI: .github/workflows/validate.yml
@@ -121,7 +122,8 @@ def check_skills() -> int:
 
 def check_doc_links() -> int:
     """5: относительные ссылки на файлы в markdown-документах существуют."""
-    docs = [ROOT / "README.md", ROOT / "NOTICE.md", ROOT / "INSTALL.md"]
+    docs = [ROOT / "README.md", ROOT / "NOTICE.md", ROOT / "INSTALL.md",
+            ROOT / "agent-description.md"]
     docs += sorted((ROOT / "references").glob("*.md"))
     docs += sorted(SKILLS.glob("*/SKILL.md"))
     n = 0
@@ -142,6 +144,47 @@ def check_doc_links() -> int:
             if not (doc.parent / rel).exists():
                 err(f"{doc.relative_to(ROOT)}: ссылка ведёт в никуда: {target}")
     return n
+
+
+def check_diagram() -> None:
+    """8: диаграмма на месте и не разошлась со своей спецификацией.
+
+    Правило из distribution-практики: артефакт, который ничего не проверяет,
+    тихо устаревает. Поэтому проверяем не только наличие файлов, но и связь
+    спецификации с отрендеренным HTML: если правили JSON, а HTML не
+    перегенерировали, заголовок и идентификаторы view-режимов разойдутся —
+    это и ловим. Полная проверка геометрии требует archify (см. CI).
+    """
+    spec = ROOT / "docs" / "vector-shotcraft.architecture.json"
+    html = ROOT / "docs" / "vector-shotcraft.architecture.html"
+    if not spec.exists():
+        err("нет docs/vector-shotcraft.architecture.json (спецификация диаграммы)")
+        return
+    if not html.exists():
+        err("нет docs/vector-shotcraft.architecture.html (отрендеренная диаграмма)")
+        return
+
+    data = json.loads(spec.read_text(encoding="utf-8"))
+    text = html.read_text(encoding="utf-8")
+    title = (data.get("meta") or {}).get("title")
+    if title and title not in text:
+        err(
+            "docs/vector-shotcraft.architecture.html: не содержит заголовок из "
+            f"спецификации («{title}») — HTML не перегенерирован после правки JSON"
+        )
+    for view in (data.get("meta") or {}).get("views") or []:
+        label = view.get("label")
+        if label and label not in text:
+            err(
+                f"docs/vector-shotcraft.architecture.html: нет view-режима «{label}» "
+                "из спецификации — HTML устарел"
+            )
+    for doc in (ROOT / "README.md", ROOT / "agent-description.md"):
+        if doc.exists() and "vector-shotcraft.architecture.html" not in doc.read_text(encoding="utf-8"):
+            err(f"{doc.relative_to(ROOT)}: нет ссылки на живую диаграмму")
+    page = ROOT / "docs" / "index.html"
+    if page.exists() and "vector-shotcraft.architecture.html" not in page.read_text(encoding="utf-8"):
+        err("docs/index.html: страница проекта не ссылается на диаграмму")
 
 
 def check_readme_numbers(n_cards: int) -> None:
@@ -180,6 +223,7 @@ def main() -> int:
     check_doc_links()
     check_readme_numbers(n_cards)
     check_notice()
+    check_diagram()
 
     if errors:
         print(f"ПРОВАЛ: {len(errors)} ошибок:")
