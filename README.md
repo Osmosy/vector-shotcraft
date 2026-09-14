@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Cards: 157](https://img.shields.io/badge/shot%20cards-157-blue.svg)](references/cards-index.md)
 [![Source: Apache-2.0](https://img.shields.io/badge/upstream-Apache--2.0-orange.svg)](NOTICE.md)
+[![Project page](https://img.shields.io/badge/Project-page-4f8ff7.svg)](https://osmosy.github.io/vector-shotcraft/)
 
 Прикладная библиотека для продуктовых роликов: **157 карточек кинематографичных
 приёмов** с точными параметрами (кадры, кривые ускорения, точки-якоря, известные
