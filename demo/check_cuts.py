@@ -7,8 +7,10 @@
 пик. Пик и есть момент склейки; сверяем его с кадрами из out/grid.json.
 """
 import json
+import shutil
 import subprocess
 import sys
+from pathlib import Path
 
 import numpy as np
 
@@ -17,6 +19,13 @@ grid = json.load(open("out/grid.json"))
 grid_frames = grid["frames"]
 fps = grid["fps"]
 W, H = 160, 90
+
+if shutil.which("ffmpeg") is None:
+    print("ПРОВАЛ: нет ffmpeg — им читаются кадры ролика (apt install ffmpeg)")
+    sys.exit(1)
+if not Path(mp4).exists():
+    print(f"ПРОВАЛ: нет файла {mp4}")
+    sys.exit(1)
 
 raw = subprocess.run(
     ["ffmpeg", "-v", "error", "-i", mp4, "-vf", f"scale={W}:{H}",
