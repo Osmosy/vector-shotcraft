@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vector Shotcraft — библиотека приёмов для продуктовых роликов</title>
+<meta name="description" content="157 карточек кинематографичных приёмов для промо-роликов: параметры в кадрах, кривые ускорения, подводные камни. Плюс монтаж по сетке битов и категорийный словарь звука.">
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --line: #26303d;
+    --fg: #e6edf3; --dim: #9aa7b4; --accent: #4f8ff7; --accent2: #7cc4ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 56px 24px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 32px; margin-bottom: 40px; }
+  h1 { font-size: 2.1rem; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .lede { color: var(--dim); font-size: 1.05rem; max-width: 62ch; margin: 0 0 24px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 28px; margin: 28px 0 0; }
+  .stat b { display: block; font-size: 1.6rem; color: var(--accent2); line-height: 1.2; }
+  .stat span { color: var(--dim); font-size: 0.86rem; }
+  h2 { font-size: 1.25rem; margin: 44px 0 14px; }
+  h3 { font-size: 1rem; margin: 26px 0 8px; color: var(--accent2); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  p { margin: 0 0 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card b { display: block; font-size: 1.35rem; color: var(--accent2); }
+  .card span { color: var(--dim); font-size: 0.9rem; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 0.95rem; }
+  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--dim); font-weight: 500; }
+  code {
+    background: #1f2632; padding: 1px 6px; border-radius: 5px;
+    font: 0.88em/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  pre {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px; overflow-x: auto;
+    font: 0.86em/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; color: #cbd6e2;
+  }
+  pre .ok { color: #6ed08a; }
+  pre .warn { color: #e5b567; }
+  .note { border-left: 3px solid var(--accent); padding: 2px 0 2px 16px; color: var(--dim); margin: 18px 0; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--dim); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Vector Shotcraft</h1>
+  <p class="lede">
+    Библиотека приёмов для продуктовых роликов: <b>157 карточек шотов</b> с точными
+    параметрами — кадры, кривые ускорения, точки-якоря, известные подводные камни —
+    плюс два слоя, которых обычно не хватает: монтаж по сетке битов и категорийный
+    словарь звукового дизайна.
+  </p>
+  <p class="lede">
+    Не конвейер и не библиотека компонентов. То, что достаётся дороже всего:
+    накопленные числа и приёмы — сколько длится наезд камеры, какую кривую взять
+    на возврат, где приём ломается.
+  </p>
+  <div class="stats">
+    <div class="stat"><b>157</b><span>карточек приёмов</span></div>
+    <div class="stat"><b>10</b><span>категорий</span></div>
+    <div class="stat"><b>16</b><span>категорий звука</span></div>
+    <div class="stat"><b>≤15 мс</b><span>остаток сетки битов</span></div>
+  </div>
+</header>
+
+<h2>Категории приёмов</h2>
+<div class="grid">
+  <div class="card"><b>28</b><span>ui-entrance — появление интерфейса</span></div>
+  <div class="card"><b>26</b><span>typography — типографика</span></div>
+  <div class="card"><b>19</b><span>transition — переходы между сценами</span></div>
+  <div class="card"><b>17</b><span>effects — эффекты и фактуры</span></div>
+  <div class="card"><b>15</b><span>interaction — ввод, выбор, курсор</span></div>
+  <div class="card"><b>13</b><span>data — графики, числа, счётчики</span></div>
+  <div class="card"><b>11</b><span>opening — открытие и первый кадр</span></div>
+  <div class="card"><b>11</b><span>rhythm — ритм и монтажные склейки</span></div>
+  <div class="card"><b>10</b><span>camera — камера и движение в пространстве</span></div>
+  <div class="card"><b>7</b><span>outro — финал и логотип</span></div>
+</div>
+
+<h2>Как это применяется</h2>
+
+<h3>1. Открытие — один приём из шести</h3>
+<p>
+  В <code>opening/</code> шесть крупных решений на первый кадр: чернильная линия,
+  крановый подъём, поток линий‑пейзаж, осколки, иконочное поле, орбитальное кольцо,
+  луч‑прожектор. Выбирается один под задачу, остальные — перебор.
+</p>
+
+<h3>2. Монтаж под музыку: сначала сетка, потом раскадровка</h3>
+<p>
+  Скалярный BPM врёт на проценты, а бит‑трекер теряет и удваивает удары. Поэтому
+  сетка строится устойчиво: период — методом PDM по фазовому пику, фаза — медианой
+  сдвигов, номер бита — арифметикой, а не позицией в массиве, затем два прохода
+  отсева выбросов и МНК по инлайнерам.
+</p>
+<pre>$ beat_grid.py bgm.mp3 --fps 30
+BPM: 129.9978   T(бит): 0.4615462 с = 13.85 кадра
+<span class="ok">OK   сетка равномерная: остаток по инлайнерам ±8.0 мс (медиана 2.1 мс) ≤ 15 мс</span>
+<span class="ok">OK   半/双倍 не нужен: базовая сетка точнее половинной и двойной</span>
+INFO сильных ударов в сетке (±17 мс = полкадра @ 30 fps): 12/61 = 19.7%
+кадры (первый бит = 0): 21, 35, 49, 63, 77, 90, 104, …</pre>
+<p>
+  Кадры из этого списка и есть точки для склеек и ударных движений. Считать их
+  вручную нельзя: округление каждого шага до целого кадра даёт дрейф до
+  <b>38 кадров</b> к концу двухминутного трека.
+</p>
+
+<h3>3. Звук — по категориям, а не «на слух»</h3>
+<p>
+  Словарь из 16 категорий говорит, <em>что</em> искать и <em>где</em>: движение
+  камеры — <code>transition/</code>, приземление — <code>impact/</code>, свет —
+  <code>light/</code> (каталога <code>sparkle/</code> не существует, хотя слово
+  из словаря именно такое), печать текста — <code>text/</code>. Аудиофайлы в
+  репозиторий не переносятся: это лицензируемые активы, а у 6 файлов источника
+  вовсе нет.
+</p>
+
+<h2>Качество подтверждено проверками</h2>
+<table>
+  <tr><th>Что проверяется</th><th>Как</th></tr>
+  <tr>
+    <td>Апстримный текст карточек не изменён</td>
+    <td>SHA1 тела каждого файла против манифеста в <code>scripts/validate.py</code></td>
+  </tr>
+  <tr>
+    <td>У каждой карточки есть русские поля</td>
+    <td>строгая сверка полноты индекса (частичный индекс падает, а не проходит)</td>
+  </tr>
+  <tr>
+    <td>Сетка битов восстанавливается верно</td>
+    <td>синтетика с известным темпом: темп, фаза, постоянство шага, остаток ≤ 15 мс на 120 с</td>
+  </tr>
+  <tr>
+    <td>Документация не разошлась с фактом</td>
+    <td>ссылки, числа README, наличие лицензии апстрима</td>
+  </tr>
+</table>
+<p class="note">
+  Всё это выполняется в CI на каждом пуше. Проверка на изменение апстримного
+  текста проверена обратным тестом: подмена одного байта в карточке делает
+  сборку красной.
+</p>
+
+<h2>Ссылки</h2>
+<table>
+  <tr><th>Что</th><th>Где</th></tr>
+  <tr><td>Репозиторий</td><td><a href="https://github.com/Osmosy/vector-shotcraft">github.com/Osmosy/vector-shotcraft</a></td></tr>
+  <tr><td>Русский индекс по всем 157 приёмам</td><td><a href="https://github.com/Osmosy/vector-shotcraft/blob/master/references/cards-index.md">references/cards-index.md</a></td></tr>
+  <tr><td>Методика монтажа по битам</td><td><a href="https://github.com/Osmosy/vector-shotcraft/blob/master/references/beat-sync.md">references/beat-sync.md</a></td></tr>
+  <tr><td>Словарь звука</td><td><a href="https://github.com/Osmosy/vector-shotcraft/blob/master/references/sfx-catalog.md">references/sfx-catalog.md</a></td></tr>
+  <tr><td>Установка</td><td><a href="https://github.com/Osmosy/vector-shotcraft/blob/master/INSTALL.md">INSTALL.md</a></td></tr>
+</table>
+
+<h2>Источник и лицензии</h2>
+<p>
+  Приёмы вендорены из <a href="https://github.com/Vincentwei1021/video-shotcraft">video-shotcraft</a>
+  (Apache‑2.0, © Wei Yihao) — 157 карточек байт‑в‑байт, сверху шапка провенанса.
+  Методика бит‑синка и словарь звука — наша переработка материалов оттуда же.
+  Репозиторий распространяется под MIT; полные тексты лицензий в
+  <code>THIRD_PARTY_LICENSES/</code>.
+</p>
+<p class="note">
+  Приёмы разобраны с чужих опубликованных промо‑роликов: взято ремесло —
+  тайминги, эластика, компоновка, — реализации переписаны с нуля, брендовых
+  элементов нет. Практический вывод для коммерческого использования — в
+  <code>NOTICE.md</code>.
+</p>
+
+<footer>
+  Vector Shotcraft · часть экосистемы <a href="https://github.com/Osmosy/vector-work">Vector</a>
+</footer>
+
+</div>
+</body>
+</html>
