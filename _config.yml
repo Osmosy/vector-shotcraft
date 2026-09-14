@@ -1,0 +1,11 @@
+# GitHub Pages (legacy/Jekyll). Нужен ровно для одного: шапка README —
+# это <div align="center"> с markdown внутри. Без parse_block_html kramdown
+# показывает такой блок сырым текстом (бейджи и заголовок видны как код) —
+# так выглядит главная у остальных репозиториев экосистемы.
+title: Vector Shotcraft
+description: Библиотека приёмов для продуктовых роликов — 157 карточек шотов, монтаж по сетке битов, категорийный словарь звука
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: true
